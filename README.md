@@ -1,3 +1,8 @@
-# New project template
+# Stack + Nix integration
 
-Use this template when creating a new project.
+This branch showcases a working Haskell Stack + Nix shell integration.
+
+```shell
+$ nix-shell
+[nix-shell]$ stack build
+```

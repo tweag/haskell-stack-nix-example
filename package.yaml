@@ -1,0 +1,15 @@
+name:                haskell-stack-nix-example
+version:             1.0.0.0
+github:              "tweag/haskell-stack-nix-example"
+author:              "tweag"
+maintainer:          "tweag"
+copyright:           "MIT"
+
+description:         Valid and invalid Stack + Nix integration examples
+
+dependencies:
+  - base
+  - servant-server
+
+library:
+  source-dirs: src
