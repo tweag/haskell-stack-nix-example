@@ -1,17 +1,20 @@
 # Stack + Nix integration
 
-This branch showcases the invasive approach of using Stack+Nix integration.
+This branch showcases the candid approach of providing Stack in the Nix shell without further configuration.
+
+The problem with this approach is that Stack provides its own GHC, which is unaware of other system dependencies provided by `shell.nix`, like `zlib`.
 
 ```shell
 $ nix-shell
 [nix-shell]$ stack build
+[...]
+zlib > configure
+zlib > Configuring zlib-0.6.2.3...
+zlib > Cabal-simple_mPHDZzAJ_3.2.1.0_ghc-8.10.7: Missing dependency on a foreign
+zlib > library:
+zlib > * Missing (or bad) header file: zlib.h
+zlib > * Missing (or bad) C library: z
+zlib > This problem can usually be solved by installing the system package that
+zlib > provides this library (you may need the "-dev" version). [...]
 ```
-
-The problem with this approach is:
-* Either we modify `stack.yaml` (this is what we did in this branch) to pass the various Nix options, but now non-Nix users can no longer build it
-* Or we don't modify `stack.yaml` and Nix users must pass the various flags in the CLI every time, e.g.:
-  ```shell
-  $ nix-shell
-  [nix-shell]$ stack --nix --no-nix-pure --nix-shell-file nix/stack-integration.nix build
-  ```
 
