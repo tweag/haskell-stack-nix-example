@@ -1,6 +1,6 @@
 # Stack + Nix integration
 
-This branch showcases the candid approach of providing Stack in the Nix shell without further configuration.
+This branch showcases the optimistic approach of providing Stack in the Nix shell without further configuration.
 
 The problem with this approach is that Stack provides its own GHC, which is unaware of other system dependencies provided by `shell.nix`, like `zlib`.
 
