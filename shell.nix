@@ -1,9 +1,7 @@
 let
   sources = import ./nix/sources.nix;
   pkgs = import sources.nixpkgs { };
-in
 
-let
   # Wrap Stack to configure Nix integration and target the correct Stack-Nix file
   #
   # - nix: Enable Nix support
