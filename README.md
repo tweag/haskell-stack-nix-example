@@ -6,3 +6,9 @@ This branch supports our [Smooth, non-invasive Haskell Stack and Nix shell integ
 $ nix-shell
 [nix-shell]$ stack build
 ```
+
+You can use a tool like [niv](https://github.com/nmattia/niv#tracking-a-nixpkgs-branch) to manage and update the `nixpkgs` version.
+
+```shell
+$ niv update nixpkgs
+```
